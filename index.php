@@ -2,6 +2,8 @@
 <head>
 <title>Project 52</title>
 <link rel="stylesheet" href="layout.css"/>
+<script src="jquery-3.1.1.js"></script>
+<script src="script.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -31,6 +33,12 @@
 				</td>
 			</tr>
 		</table>
+		<code>
+			<?php
+				require 'bal.php';
+
+			?>
+		</code>
 	</div>
 </body>
 </html>
