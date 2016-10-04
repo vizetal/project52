@@ -1,3 +1,6 @@
+<?php
+	require 'populator.php';
+?>
 <html>
 <head>
 <title>Project 52</title>
@@ -9,34 +12,42 @@
 	<div class="container">
 		<h2>Project 52</h2>
 		<hr>
+		<form action = "bal.php" method = "post"/>
 		<table>
 			<tr>
 				<td><strong>Category:</strong></td>
-				<td><input type="text" name="category" placeholder="Category name..."/></td>
+				<td><input type="text" name="data[category]" placeholder="Category name..."/></td>
 			</tr>
 			<tr>
 				<td><strong>Parent Category:</strong></td>
 				<td>
-					<select name="parent_category">
-						<option>category 1</option>
-						<option>category 2</option>
-						<option>category 3</option>
-						<option>category 4</option>
-						<option>category 5</option>
-						<option>category 6</option>
+					<select name="data[parent_category_id]">
+						<option value='0'>null</option>
+
 					</select>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2" class="ctr">
-					<input type="button" value="Save" name="add_new_category"/>
+				<input type="hidden" name="op" value="create_category"/>
+					<input type="submit" value="create" name="add_new_category"/>
 				</td>
 			</tr>
 		</table>
+		</form>
+		
+		<table>
+			<tr>
+				<td>Category</td><td></td>
+			</tr>
+		</table>
 		<code>
+			<strong>info:</strong><br/> 
 			<?php
-				require 'bal.php';
-
+				//require 'bal.php';
+				require 'messages.php';
+				$code = isset($_GET['code']) ? $_GET['code'] : 'NOP';
+				echo $message[$code];
 			?>
 		</code>
 	</div>

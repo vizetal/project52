@@ -9,8 +9,16 @@ function create_connection($config)
 
 function insert_data($conn, $sql)
 {
-	if ($conn->query($sql) === TRUE) 
-    	return TRUE;
+	if ($conn->query($sql) === true) 
+    	return true;
 	 else 
-    	return $conn->error;
+    	return false;
+}
+
+function fetch_all($conn, $sql)
+{
+	$result = mysqli_query($con, $sql);
+	$data = mysqli_fetch_all($result,MYSQLI_ASSOC);
+	mysqli_free_result($result);
+	return $data;
 }
