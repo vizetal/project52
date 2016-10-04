@@ -1,12 +1,12 @@
 <?php
 //populator
-require 'config.php';
+
 require 'dal.php';
 
-function get_category_list()
+function get_category_list($config)
 {
 	$conn = create_connection($config);
 	$sql  = "SELECT category_name FROM categories ORDER BY id";
-	print_r(fetch_all($conn, $sql));
-
+	return (fetch_all($conn, $sql));
 }
+

@@ -17,7 +17,7 @@ function insert_data($conn, $sql)
 
 function fetch_all($conn, $sql)
 {
-	$result = mysqli_query($con, $sql);
+	$result = mysqli_query($conn, $sql);
 	$data = mysqli_fetch_all($result,MYSQLI_ASSOC);
 	mysqli_free_result($result);
 	return $data;
