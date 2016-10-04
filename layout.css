@@ -1,0 +1,27 @@
+html, body, table  {
+	font-family:verdana;
+	font-size:90%;
+}
+table {
+	border:1px dashed #ccc;
+}
+
+table td{
+	border:1px dashed #ccc;
+}
+input, select {
+	padding:1px;
+}
+
+
+.container{
+	margin:0px auto;
+	width:800px;
+	min-height:400px;
+	border:1px solid #ccc;
+	padding:5px;
+}
+
+.ctr {
+	text-align="center";
+}
